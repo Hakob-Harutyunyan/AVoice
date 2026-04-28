@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local model and generated audio
+model/
+outputs/
+*.wav
+*.mp3
+*.flac
+*.safetensors
+*.bin
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
