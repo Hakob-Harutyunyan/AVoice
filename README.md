@@ -117,5 +117,5 @@ curl http://127.0.0.1:8000/healthz
 ## Notes
 
 - This repository is for inference and serving only.
-- The model and code are released under Apache-2.0 unless noted otherwise in
+- The model and code are released under GPL-2.0 unless noted otherwise in
   `THIRD_PARTY_NOTICES.md`.
