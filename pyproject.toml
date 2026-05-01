@@ -21,6 +21,7 @@ dependencies = [
     "uvicorn>=0.30",
     "pydub",
     "librosa",
+    "accelerate>=0.21",
 ]
 
 [project.scripts]
