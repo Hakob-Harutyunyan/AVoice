@@ -5,17 +5,17 @@ voice design, or auto voice.
 
 Usage:
     # Voice cloning
-    omnivoice-infer --model Hak5/AVoice \
+    omnivoice-infer --model Hak5/AVoice-TTS \
         --text "Hello, this is a text for text-to-speech." \
         --ref_audio ref.wav --ref_text "Reference transcript." --output out.wav
 
     # Voice design
-    omnivoice-infer --model Hak5/AVoice \
+    omnivoice-infer --model Hak5/AVoice-TTS \
         --text "Hello, this is a text for text-to-speech." \
         --instruct "male, British accent" --output out.wav
 
     # Auto voice
-    omnivoice-infer --model Hak5/AVoice \
+    omnivoice-infer --model Hak5/AVoice-TTS \
         --text "Hello, this is a text for text-to-speech." --output out.wav
 """
 
@@ -47,7 +47,7 @@ def get_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--model",
         type=str,
-        default="Hak5/AVoice",
+        default="Hak5/AVoice-TTS",
         help="Model checkpoint path or HuggingFace repo id.",
     )
     parser.add_argument(
