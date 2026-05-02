@@ -7,7 +7,7 @@ so the repository stays clean.
 Model weights:
 
 - Hugging Face: [`Hak5/AVoice-TTS`](https://huggingface.co/Hak5/AVoice-TTS)
-- Kaggle Model: `[hakdevelopment/avoice-omnivoice-hy](https://www.kaggle.com/models/hakdevelopment/avoice-omnivoice-hy)`
+- Kaggle Model: [`hakdevelopment/avoice-omnivoice-hy`](https://www.kaggle.com/models/hakdevelopment/avoice-omnivoice-hy)
 
 ## Quick Start
 
