@@ -118,13 +118,18 @@ curl.exe -f -X POST "http://127.0.0.1:8000/v1/audio/speech" `
 
 ## Docker
 
-Build the image:
+There are two Dockerfiles:
+
+- `Dockerfile` builds the CUDA/GPU image.
+- `Dockerfile.cpu` builds a smaller CPU-only image.
+
+Build the GPU image:
 
 ```bash
 docker build -t avoice-api .
 ```
 
-Run from Hugging Face:
+Run the GPU image from Hugging Face:
 
 ```bash
 docker run --gpus all --rm -p 8000:8000 \
@@ -133,7 +138,21 @@ docker run --gpus all --rm -p 8000:8000 \
   avoice-api
 ```
 
-Run with a local model folder:
+Build the CPU-only image:
+
+```bash
+docker build -f Dockerfile.cpu -t avoice-api-cpu .
+```
+
+Run the CPU-only image from Hugging Face:
+
+```bash
+docker run --rm -p 8000:8000 \
+  -e OMNIVOICE_MODEL=Hak5/AVoice-TTS \
+  avoice-api-cpu
+```
+
+Run either image with a local model folder:
 
 ```bash
 docker run --gpus all --rm -p 8000:8000 \
@@ -141,6 +160,15 @@ docker run --gpus all --rm -p 8000:8000 \
   -e OMNIVOICE_MODEL=/app/model \
   -e OMNIVOICE_DEVICE=cuda \
   avoice-api
+```
+
+For the CPU image, remove `--gpus all` and use `avoice-api-cpu`:
+
+```bash
+docker run --rm -p 8000:8000 \
+  -v /path/to/avoice-model:/app/model:ro \
+  -e OMNIVOICE_MODEL=/app/model \
+  avoice-api-cpu
 ```
 
 Health check:
